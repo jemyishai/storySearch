@@ -19,11 +19,10 @@ const Main = (props) => {
       <h1>Story Information</h1>
       <nav>
               {/* The navbar will show these links after you log in */}
-              <Link to="/home">Home</Link>
+
               <Storyinfo />
       </nav>
-      <hr />
-      {children}
+
     </div>
   )
 }
@@ -33,7 +32,7 @@ const Main = (props) => {
  */
 const mapState = (state) => {
   return {
-    isLoggedIn: !!state.user.id
+    state
   }
 }
 
@@ -52,8 +51,7 @@ export default withRouter(connect(mapState, mapDispatch)(Main))
 /**
  * PROP TYPES
  */
-Main.propTypes = {
-  children: PropTypes.object,
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
-}
+// Main.propTypes = {
+//   children: PropTypes.object,
+//   handleClick: PropTypes.func.isRequired
+// }
