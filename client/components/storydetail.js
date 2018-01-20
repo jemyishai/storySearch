@@ -1,8 +1,7 @@
 import React, { Component }  from 'react'
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
-import { Rating, Container, Header, Input, Card, Image, CardContent as Content, CardHeader, CardMeta, CardDescription, Radio} from 'semantic-ui-react'
-
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 class storydetail extends Component {
   constructor (props){
@@ -11,14 +10,19 @@ class storydetail extends Component {
 
   render (){
     const {info} = this.props
-    console.log('info',info)
     if (!info) return "Data Loading"
     return (
-      <div>
-      {info.title}
-      COVER:<img src={info.cover}/>
-      DESCRIPTION: {info.description}
-      </div>
+      <Card>
+      <Image src={info.cover} />
+          <Card.Content>
+          {info.title}
+          DESCRIPPTION: {info.description}
+          </Card.Content>
+      {
+        (info.mature) ? "CONATAINS MATURE CONTENT" : "Content Not MATURE"
+      }
+      </Card>
+
     )
   }
 
@@ -28,8 +32,8 @@ const mapStateToProps = ({story}) => ({story})
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storySearch(){
-      dispatch(getStory(story))
+    storySearch(term){
+      dispatch(getStory(term))
     }
   }
 }
