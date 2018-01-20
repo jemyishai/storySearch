@@ -12,11 +12,12 @@ class storydetail extends Component {
   render (){
     const {info} = this.props
     console.log('info',info)
+    if (!info) return "Data Loading"
     return (
       <div>
-      {
-
-      }
+      {info.title}
+      COVER:<img src={info.cover}/>
+      DESCRIPTION: {info.description}
       </div>
     )
   }
