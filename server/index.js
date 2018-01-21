@@ -41,7 +41,6 @@ const createApp = () => {
     next();
   });
 
-  app.use(CORS(app, automatic_options=True))
 
   // body parsing middleware
   app.use(bodyParser.json())
