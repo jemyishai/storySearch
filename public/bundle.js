@@ -27719,6 +27719,7 @@ var storydetail = function (_Component) {
     key: 'render',
     value: function render() {
       var info = this.props.info;
+      var tags = this.props.info.tags;
 
       if (!info) return "Data Loading";
       return _react2.default.createElement(
@@ -27765,6 +27766,10 @@ var storydetail = function (_Component) {
             'Author: ',
             info.user.name,
             _react2.default.createElement('br', null),
+            'TAGS: ',
+            tags.map(function (tag) {
+              return '*' + tag;
+            }),
             _react2.default.createElement(_semanticUiReact.List.Icon, { name: 'linkify' }),
             _react2.default.createElement('br', null),
             _react2.default.createElement('hr', null)

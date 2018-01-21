@@ -10,6 +10,7 @@ class storydetail extends Component {
 
   render (){
     const {info} = this.props
+    const {tags} = this.props.info
     if (!info) return "Data Loading"
     return (
       <List.Item className="single-list">
@@ -27,6 +28,9 @@ class storydetail extends Component {
           </List.Content>
               {info.description}<br /> <br />
               Author: {info.user.name}<br />
+              TAGS: {
+                tags.map(tag => '*' + tag)
+              }
               <List.Icon name='linkify' />
               <br />
               <hr />
