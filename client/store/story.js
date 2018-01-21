@@ -1,8 +1,6 @@
+import token from '../../secrets'
 const fetch = require('snekfetch');
-
-
-
-let AUTH_TOKEN = 'Basic COmAsfoTl5bHFOoHoKl8uQCo12cA8sl2ytzk2RPu3uRB';
+const AUTH_TOKEN = process.env.AUTH_TOKEN || token
 
 
 const GET_STORY = 'GET_STORY'
