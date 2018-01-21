@@ -18,7 +18,7 @@ class storyinfo extends Component {
     if (!primer) return 'Data Loading'
     return (
       <div>
-      <Searchbar />
+      <Searchbar className="story-form"/>
        <List animated verticalAlign='middle' className="list">
       {
         primer.map((info) => <Storydetail key={info.id} info={info} />)

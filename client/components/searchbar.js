@@ -23,11 +23,12 @@ render(){
     <div>
     <form onSubmit={this.search }>
       <Input
+      className="story-form"
       name="search"
       type="text"
       focus placeholder="Search For a Story"
       />
-      <button type="submit">SEARCH</button>
+
       </form>
     </div>
   )

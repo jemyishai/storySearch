@@ -27653,15 +27653,11 @@ var Searchbar = function (_Component) {
           'form',
           { onSubmit: this.search },
           _react2.default.createElement(_semanticUiReact.Input, {
+            className: 'story-form',
             name: 'search',
             type: 'text',
             focus: true, placeholder: 'Search For a Story'
-          }),
-          _react2.default.createElement(
-            'button',
-            { type: 'submit' },
-            'SEARCH'
-          )
+          })
         )
       );
     }
@@ -27856,7 +27852,7 @@ var storyinfo = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_searchbar2.default, null),
+        _react2.default.createElement(_searchbar2.default, { className: 'story-form' }),
         _react2.default.createElement(
           _semanticUiReact.List,
           { animated: true, verticalAlign: 'middle', className: 'list' },

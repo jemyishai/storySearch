@@ -49,11 +49,18 @@ form div {
 float:left;
 }
 
-.info-right{
-  !important:
-  float:right;
-}
+
 
 .single-list{
   display: flex;
+}
+
+.story-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.story-form {
+  align-content: right;
 }
