@@ -19,3 +19,32 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.list{
+  display: flex;
+  flex-direction: column;
+}
+
+/* .all-list-container > div {
+  margin-bottom: 5em;
+  flex-basis: 4em;
+  flex-grow: 1;
+} */
+/* object-fit: cover; */
+
+.info-float{
+  transition: all, 0.2s;
+  box-shadow: 0 0 30px 6px rgba(31,51,73,.1);
+}
+
+.single-list{
+
+}
+
+.all-watches-single-card{
+  height: 30em;
+  transition: all, 0.2s;
+}
+
+
+

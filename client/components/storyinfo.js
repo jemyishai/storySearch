@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
 import Storydetail from './storydetail';
 import {getStory} from '../store/story'
-import Searchbar from './searchbar'
+import Searchbar from './searchbar';
+import { List  } from 'semantic-ui-react'
 
 
 class storyinfo extends Component {
@@ -18,9 +19,12 @@ class storyinfo extends Component {
     return (
       <div>
       <Searchbar />
+       <List animated verticalAlign='middle' className="list">
       {
         primer.map((info) => <Storydetail key={info.id} info={info} />)
       }
+      < hr />
+        </List>
       </div>
     )
   }

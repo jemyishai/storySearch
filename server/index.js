@@ -41,7 +41,6 @@ const createApp = () => {
     next();
   });
 
-
   // body parsing middleware
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))

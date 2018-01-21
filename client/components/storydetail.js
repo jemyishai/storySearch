@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { List, Card, Icon, Image } from 'semantic-ui-react'
 
 class storydetail extends Component {
   constructor (props){
@@ -12,16 +12,24 @@ class storydetail extends Component {
     const {info} = this.props
     if (!info) return "Data Loading"
     return (
-      <Card>
-      <Image src={info.cover} />
-          <Card.Content>
-          {info.title}
-          DESCRIPPTION: {info.description}
-          </Card.Content>
-      {
-        (info.mature) ? "CONATAINS MATURE CONTENT" : "Content Not MATURE"
-      }
-      </Card>
+      <List.Item className="single-list">
+        <div className="all-list-container">
+          <Image src={info.cover} />
+          <div className="info-float">
+          <List.Content>
+          <List.Header>{info.title}</List.Header>
+            {
+              (info.mature) ? "CONTAINS MATURE CONTENT" : <em>IS SUITABLE FOR ALL AGES</em>
+            }
+          </List.Content>
+              {info.description}<br />
+              Author: {info.user.name}<br />
+              <List.Icon name='linkify' />
+              <a href={info.url}>READ THIS STORY</a> <br/>
+
+          </div>
+      </div>
+      </List.Item>
 
     )
   }

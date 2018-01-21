@@ -27726,17 +27726,44 @@ var storydetail = function (_Component) {
 
       if (!info) return "Data Loading";
       return _react2.default.createElement(
-        _semanticUiReact.Card,
-        null,
-        _react2.default.createElement(_semanticUiReact.Image, { src: info.cover }),
+        _semanticUiReact.List.Item,
+        { className: 'single-list' },
         _react2.default.createElement(
-          _semanticUiReact.Card.Content,
-          null,
-          info.title,
-          'DESCRIPPTION: ',
-          info.description
-        ),
-        info.mature ? "CONATAINS MATURE CONTENT" : "Content Not MATURE"
+          'div',
+          { className: 'all-list-container' },
+          _react2.default.createElement(_semanticUiReact.Image, { src: info.cover }),
+          _react2.default.createElement(
+            'div',
+            { className: 'info-float' },
+            _react2.default.createElement(
+              _semanticUiReact.List.Content,
+              null,
+              _react2.default.createElement(
+                _semanticUiReact.List.Header,
+                null,
+                info.title
+              ),
+              info.mature ? "CONTAINS MATURE CONTENT" : _react2.default.createElement(
+                'em',
+                null,
+                'IS SUITABLE FOR ALL AGES'
+              )
+            ),
+            info.description,
+            _react2.default.createElement('br', null),
+            'Author: ',
+            info.user.name,
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(_semanticUiReact.List.Icon, { name: 'linkify' }),
+            _react2.default.createElement(
+              'a',
+              { href: info.url },
+              'READ THIS STORY'
+            ),
+            ' ',
+            _react2.default.createElement('br', null)
+          )
+        )
       );
     }
   }]);
@@ -27790,6 +27817,8 @@ var _searchbar = __webpack_require__(445);
 
 var _searchbar2 = _interopRequireDefault(_searchbar);
 
+var _semanticUiReact = __webpack_require__(383);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27818,9 +27847,14 @@ var storyinfo = function (_Component) {
         'div',
         null,
         _react2.default.createElement(_searchbar2.default, null),
-        primer.map(function (info) {
-          return _react2.default.createElement(_storydetail2.default, { key: info.id, info: info });
-        })
+        _react2.default.createElement(
+          _semanticUiReact.List,
+          { animated: true, verticalAlign: 'middle', className: 'list' },
+          primer.map(function (info) {
+            return _react2.default.createElement(_storydetail2.default, { key: info.id, info: info });
+          }),
+          _react2.default.createElement('hr', null)
+        )
       );
     }
   }]);
