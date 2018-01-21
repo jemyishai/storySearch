@@ -1,4 +1,4 @@
-import token from '../../secrets'
+import {token} from '../../secrets'
 const fetch = require('snekfetch');
 const AUTH_TOKEN = process.env.AUTH_TOKEN || token
 
@@ -7,7 +7,6 @@ const GET_STORY = 'GET_STORY'
 
 
 const storyInfo = (story) => ({type: GET_STORY, story})
-// let query = 'harry';
 
   export const getStory = (query) =>
       dispatch =>
