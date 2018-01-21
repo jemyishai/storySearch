@@ -16,7 +16,7 @@ const Main = (props) => {
 
   return (
     <div>
-      <h1>Story Information</h1>
+      <h1>WattPad Stories</h1>
       <nav>
               {/* The navbar will show these links after you log in */}
 
