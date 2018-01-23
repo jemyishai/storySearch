@@ -30,6 +30,8 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     callbackURL: process.env.GOOGLE_CALLBACK
   }
 
+
+
   const strategy = new GoogleStrategy(googleConfig, (token, refreshToken, profile, done) => {
     const googleId = profile.id
     const name = profile.displayName
