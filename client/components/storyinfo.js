@@ -4,7 +4,7 @@ import { withRouter, Link } from 'react-router-dom'
 import Storydetail from './storydetail';
 import {getStory} from '../store/story'
 import Searchbar from './searchbar';
-import { List  } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 
 class storyinfo extends Component {
@@ -19,12 +19,12 @@ class storyinfo extends Component {
     return (
       <div>
       <Searchbar className="story-form"/>
-       <List animated verticalAlign='middle' className="list">
+       <Card animated verticalAlign='middle' className="list">
       {
         primer.map((info) => <Storydetail key={info.id} info={info} />)
       }
       < hr />
-        </List>
+        </Card>
       </div>
     )
   }
